@@ -8,7 +8,7 @@ function App() {
         variant="h2"
         component="h2"
         data-test="heading"
-      >Olá Dev</Typography>
+      >DevBook</Typography>
     </>
   )
 }
