@@ -1,16 +1,19 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Typography } from "@material-ui/core"
 import { BookList } from "./components/BookList"
+import { api } from "./services/api"
 
 function App() {
-  const books = [
-    {
-      name: 'Refactoring'
-    },
-    {
-      name: 'Domain-driven design'
-    }
-  ]
+  const [books, setBooks] = useState([])
+
+  async function getBooks() {
+    const booksResponse = await api.get('/books')
+    setBooks(booksResponse.data)
+  }
+
+  useEffect(() => {
+    getBooks()
+  }, [])
 
   return (
     <>
