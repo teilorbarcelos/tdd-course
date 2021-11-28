@@ -9,7 +9,7 @@ describe('devbook application', () => {
     cy.get('div[data-test="bookList"]').should('exist')
     cy.get('div.bookItem').should((books) => {
       expect(books).to.have.length(2)
-      const titles = [...books].map(book => book.querySelector('h2').innerHTML)
+      const titles = [...books].map(book => book.querySelector('h5').innerHTML)
       expect(titles).to.deep.equal(['Refactoring', 'Domain-driven design'])
     })
   })
