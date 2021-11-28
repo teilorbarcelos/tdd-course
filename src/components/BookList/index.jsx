@@ -1,6 +1,6 @@
 import { Typography } from "@material-ui/core"
 
-export default function BookList({ books }) {
+export default function BookList({ books, loading, error }) {
   return (
     <div data-test="bookList">
       {
