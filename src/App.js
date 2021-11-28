@@ -1,19 +1,8 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { Typography } from "@material-ui/core"
-import { BookList } from "./components/BookList"
-import { api } from "./services/api"
+import { BookListContainer } from "./components/BookListContainer"
 
 function App() {
-  const [books, setBooks] = useState([])
-
-  async function getBooks() {
-    const booksResponse = await api.get('/books')
-    setBooks(booksResponse.data)
-  }
-
-  useEffect(() => {
-    getBooks()
-  }, [])
 
   return (
     <>
@@ -25,7 +14,7 @@ function App() {
         DevBook
       </Typography>
 
-      <BookList books={books} />
+      <BookListContainer />
     </>
   )
 }
