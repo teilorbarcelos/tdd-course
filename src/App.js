@@ -1,5 +1,6 @@
 import React from "react"
 import { Typography } from "@material-ui/core"
+import { BookList } from "./components/BookList"
 
 function App() {
   const books = [
@@ -11,27 +12,6 @@ function App() {
     }
   ]
 
-  const RenderBooks = (books) => {
-    return (
-      <div data-test="bookList">
-        {
-          books.map(book =>
-            <div className="bookItem">
-              <Typography
-                variant="h5"
-                component="h5"
-                data-test="heading"
-              >
-                {book.name}
-              </Typography>
-            </div>
-          )
-        }
-      </div>
-    )
-
-  }
-
   return (
     <>
       <Typography
@@ -42,9 +22,7 @@ function App() {
         DevBook
       </Typography>
 
-      {
-        RenderBooks(books)
-      }
+      <BookList books={books} />
     </>
   )
 }
